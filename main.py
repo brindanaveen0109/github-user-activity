@@ -18,7 +18,7 @@ def display_activity(events):
     if not events:
         print("No recent activity found or failed to fetch activity.")
         return
-    for event in events:
+    for event in events[:5]:
         event_type = event["type"]
         repo_name = event["repo"]["name"]
         action = ""
