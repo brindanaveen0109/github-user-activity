@@ -2,14 +2,22 @@ import sys
 import requests
 
 def fetch_github_activity(username): 
-    url = "https://api.github.com/users/{username}/events"
+    url = f"https://api.github.com/users/{username}/events"
     try:
         response = requests.get(url)
+        if response.status_code == 200:
+            print("htpp request successful")
+            return response.json()
+        elif response.status_code == 404:
+            print("User not found")
     except requests.exceptions.RequestException as e:
         print(f"Error: Unable to connect. {e}")
     return []
 
 def display_activity(events):
+    if not events:
+        print("No recent activity found or failed to fetch activity.")
+        return
     for event in events:
         event_type = event["type"]
         repo_name = event["repo"]["name"]
