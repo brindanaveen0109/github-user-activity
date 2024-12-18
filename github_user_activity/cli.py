@@ -4,7 +4,8 @@ from github_user_activity.formatter import format_activity
 def main():
     if len(sys.argv) != 2:
         print("Usage: python -m github_user_activity <username>")
-        return
+        sys.exit(2)
+        
 
     username = sys.argv[1]
     print(f"Fetching recent activity for GitHub user: {username}...\n")
