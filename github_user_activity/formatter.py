@@ -1,7 +1,7 @@
 def format_activity(events):
     if not events:
         return "No recent activity found or failed to fetch the activity"
-    
+        
     output = []
     for event in events[:5]:
         event_type = event["type"]
@@ -16,5 +16,5 @@ def format_activity(events):
         else:
             action = f"Performed {event_type} on"
 
-        output.append(f" - {action} {repo_name}")
+        output.append(f" - {action}{repo_name}")
     return "\n".join(output)
