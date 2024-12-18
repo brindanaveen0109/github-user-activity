@@ -12,9 +12,9 @@ Python 3.x or any compatible environment. </li>
 ### Usage
 To run the script from command line:
 1. Install and run nuitka, which is used to convert python script to executable script use `pip install nuitka`
-2. Run the command  `nuitka --standalone --onefile --output-dir=dist github_user_activity.py` which is the command used to convert python script to executable script.
+2. Run the command  `nuitka --standalone --onefile github_user_activity/cli.py` which is the command used to convert python script to executable script.
     Code breakdown: --standalone: Packages all the dependencies into a single folder.
                     --onefile: Creates a single executable .exe file.
-                    --output-dir-dist: Specifies that the output has to be in a directory called "dist"
+                    --output-dir-dist: Specifies that the output has to be in a directory called "cli.dist"
 3. Navigate into github_user_activity.dist and find the executable file.
-4. To run this executable file, run command in the format  `.\github_user_activity <username>`. 
+4. To run this executable file, run command in the format  `.\cli.exe <username>`. 
