@@ -4,7 +4,7 @@ class ActivityFormatter:
             return "No recent activity found or failed to fetch the activity"
 
         output = []
-        for event in events[:5]:
+        for event in events:
             event_type = event["type"]
             repo_name = event["repo"]["name"]
             action = ""
